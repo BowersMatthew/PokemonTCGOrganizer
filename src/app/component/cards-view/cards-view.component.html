@@ -1,0 +1,40 @@
+<br><br>
+<div class="container">
+  <h2>Cards</h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th> Name </th>
+        <th> Type </th>
+        <th> CardType </th>
+        <th> Abilities </th>
+        <th> Stage </th>
+        <th> Power </th>
+        <th> Set </th>
+      </tr>
+    </thead>
+    <tbody *ngIf="cards.lenght < 1; else noCards">
+      <tr *ngFor="let card of cards">
+        <td>card.name</td>
+        <td>card.type</td>
+        <td>card.cardType</td>
+        <td>card.abilities</td>
+        <td>card.stage</td>
+        <td>card.power</td>
+        <td>card.set</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="cards.length > 0">
+    <a href="newCard">Click here to add a new card.</a>
+  </div>
+</div>
+
+
+
+<ng-template #noCards>
+
+  <h5>There are no cards</h5>
+  <h5><a href="newCard">Click here to create one</a></h5>
+
+</ng-template>
