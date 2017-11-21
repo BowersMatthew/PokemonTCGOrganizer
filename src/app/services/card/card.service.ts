@@ -5,7 +5,7 @@ import { Ability } from '../../models/Ability';
 
 @Injectable()
 export class CardService {
-  currentID: number = 0;
+  currentID = 0;
   cards: Card[];
 
   constructor() {
@@ -56,7 +56,7 @@ export class CardService {
   removeCard(oldCard: Card) {
     let i = 0;
     for (; i < this.cards.length; i++) {
-      if (this.cards[i].id == oldCard.id) {
+      if (this.cards[i].id === oldCard.id) {
         this.cards.splice(i, 1);
       } else {
         i++;
